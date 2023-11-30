@@ -1,0 +1,13 @@
+home {
+
+    flex: 1;
+    padding: 5rem 10rem;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    & .logo-img {
+        height: 10rem;
+    }
+}

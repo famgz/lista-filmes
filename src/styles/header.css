@@ -1,0 +1,22 @@
+header {
+    background-color: var(--bg-dark);
+    color: var(--bw-0);
+    padding: 1rem 5rem;
+
+    &, & > nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & .logo {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    & nav {
+        gap: 2rem;
+
+    }
+}

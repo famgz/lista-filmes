@@ -1,0 +1,52 @@
+footer {
+    background-color: var(--bg-dark);
+    color: var(--bw-1);
+    padding: 2rem;
+    gap: 1.4rem;
+    font-weight: normal;
+    
+    & * {
+        font-size: 1.2rem;
+    }
+
+    &,
+    &>div,
+    & .social-logos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    & .social-logos {
+        flex-direction: row;
+        width: 100%;
+        max-width: 20rem;
+
+        & .social-logo {
+            cursor: pointer;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: var(--bw-0);
+            display: flex;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+
+            & img {
+                height: 2.5rem;
+            }
+        }
+    }
+
+    & .quick-links {
+        flex-direction: row;
+        
+        & a {
+            display: inline;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
