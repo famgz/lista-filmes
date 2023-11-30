@@ -43,7 +43,7 @@ a {
     width: 100%;
     max-width: 1060px;
 
-    & .card-film {
+    & .film-card {
         box-sizing: border-box;
         background-color: var(--bw-0);
         border-radius: 0.5rem;

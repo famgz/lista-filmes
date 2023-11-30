@@ -11,12 +11,14 @@ function loadComponent(htmlName, position) {
         // Determine the current page
         const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
 
-        // Fetch the header content
-        fetch(`/components/${htmlName}.html`)
+        componentPath = `../components/${htmlName}.html` 
+        // console.log(componentPath)
+
+        fetch(componentPath)
             .then(response => response.text())
-            .then(headerHtml => {
+            .then(Html => {
                 // Inject the header content into the <body>
-                document.body.insertAdjacentHTML(position, headerHtml);
+                document.body.insertAdjacentHTML(position, Html);
             });
     });
 }

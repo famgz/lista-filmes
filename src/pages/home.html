@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../index.css">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="../assets/data/films-data.json"></script>
+    <script src="../components.js"></script>
+    <script src="../index.js"></script>
+</head>
+
+<body>
+    <home>
+        <img class="logo-img" src="../assets/logo-black.png" alt="">
+        <p>THIS IS THE HOME PAGE</p>
+
+        <div class="films-grid">
+            <div class="film-card">
+            </div>
+            <div class="film-card">
+            </div>
+            <div class="film-card">
+            </div>
+            <div class="film-card">
+            </div>
+            <div class="film-card">
+            </div>
+            <div class="film-card">
+            </div>
+
+        </div>
+
+        <button onClick="buildFilmCards()">my button</button>
+
+    </home>
+
+    <script>
+        loadComponent('header', 'afterbegin');
+        loadComponent('footer', 'beforeend');
+        </script>
+    <script>
+        getFilmsList()
+        buildFilmCards()
+    </script>
+</body>
+
+</html>
