@@ -85,7 +85,7 @@ async function insertFilmCard(slug, filmData) {
 
     card = `
     <div class="film-card">
-        <img src="${posterUrl}" alt=""> 
+        <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" > 
         <p>${filmData.internationalTitle}</p>
     </div>
     `

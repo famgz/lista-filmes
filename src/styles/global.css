@@ -51,4 +51,8 @@ a {
         min-width: 20rem;
         min-height: 20rem;
     }
+
+    & img.poster-image {
+        width: 100%;
+    }
 }
