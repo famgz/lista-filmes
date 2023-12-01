@@ -1,12 +1,12 @@
 footer {
-    background-color: var(--bg-dark);
-    color: var(--bw-1);
+    background-color: var(--grey-10);
+    color: var(--grey-2);
     padding: 2rem;
     gap: 1.4rem;
     font-weight: normal;
     
     & * {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     &,
@@ -27,7 +27,7 @@ footer {
             cursor: pointer;
             width: 3.5rem;
             height: 3.5rem;
-            background-color: var(--bw-0);
+            background-color: var(--grey-1);
             display: flex;
             border-radius: 50%;
             align-items: center;

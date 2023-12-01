@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Filme</title>
     <link rel="stylesheet" href="../index.css">
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
     <script type="text/javascript" src="../assets/data/films-data.json"></script>
@@ -13,18 +13,13 @@
 </head>
 
 <body>
-    <div class="home-wrapper">
-        <img class="logo-img" src="../assets/logo-black.png" alt="">
-        <p>THIS IS THE HOME PAGE</p>
+    <div class="film-wrapper">
+        <p>THIS IS THE FILM PAGE</p>
 
-        <div class="films-grid">
-            <!-- <div class="film-card">
-            </div> -->
-            
+        <div class="film-info">
+
 
         </div>
-
-        <button class="load-more" onClick="buildFilmCards()">Carregar Mais</button>
 
     </div>
 
@@ -32,9 +27,10 @@
         loadComponent('header', 'afterbegin');
         loadComponent('footer', 'beforeend');
     </script>
+
     <script>
         getFilmsList()
-        buildFilmCards()
+        showFilm()
     </script>
 </body>
 

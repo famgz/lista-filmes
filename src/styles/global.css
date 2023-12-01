@@ -1,11 +1,19 @@
 :root {
     /* 1 rem = 10px */
     font-size: 62.5%;
-    --bg-dark: #323232;
-    --bw-0: #f2f2f2;
-    --bw-1: #dadada;
-    --bw-2: #bdbdbd;
-    --bw-3: #a0a0a0;
+
+    --white: white;
+    --grey-1: #f2f2f2;
+    --grey-2: #e0e0e0;
+    --grey-3: #cecece;
+    --grey-4: #bcbcbc;
+    --grey-5: #aaaaaa;
+    --grey-6: #989898;
+    --grey-7: #868686;
+    --grey-8: #747474;
+    --grey-9: #626262;
+    --grey-10: #323232;
+    --black: black;
 }
 
 /* reset */
@@ -13,7 +21,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
 body {
@@ -25,34 +34,9 @@ body {
 a {
     text-decoration: none;
     cursor: pointer;
-    color: var(--bw-1);
+    color: var(--grey-2);
 
     &:hover {
         filter: brightness(1.3);
-    }
-}
-
-.films-grid {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, auto));
-    column-gap: 3rem;
-    row-gap: 2rem;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1060px;
-
-    & .film-card {
-        box-sizing: border-box;
-        background-color: var(--bw-0);
-        border-radius: 0.5rem;
-        padding: 1rem;
-        min-width: 20rem;
-        min-height: 20rem;
-    }
-
-    & img.poster-image {
-        width: 100%;
     }
 }

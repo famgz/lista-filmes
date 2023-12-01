@@ -26,6 +26,30 @@ function sleep(ms) {
 }
 
 
+// Home Page
+
+
+function shuffleObject(obj) {
+    // Convert object properties into an array of [key, value] pairs
+    const entries = Object.entries(obj);
+    // Shuffle the array
+    const shuffledEntries = shuffleArray(entries);
+    // Reconstruct the object
+    const shuffledObject = Object.fromEntries(shuffledEntries);
+    return shuffledObject;
+}
+
+
+function shuffleArray(array) {
+    // Fisher-Yates shuffle algorithm
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+
 function getFilmsList() {
     fetch(filmsDataPath, requestOptions)
         .then(response => {
@@ -36,7 +60,8 @@ function getFilmsList() {
         })
         .then(jsonData => {
             // console.log(jsonData)
-            filmsList = jsonData
+            filmsList = shuffleObject(jsonData)
+            // localStorage.setItem('filmsList', JSON.stringify(filmsList))
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error)
@@ -84,10 +109,14 @@ async function insertFilmCard(slug, filmData) {
     saveImage(posterUrl)
 
     card = `
-    <div class="film-card">
-        <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" > 
-        <p>${filmData.internationalTitle}</p>
-    </div>
+    <a class="film-card" href="../pages/film.html?slug=${slug}">
+        <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" class="poster-image"> 
+        <div class="film-card-info">
+            <h2>${filmData.internationalTitle}</h2>
+            <p>${filmData.director}</p>
+            <p>${filmData.countries}, ${filmData.year}</p>
+        </div>
+    </a>
     `
 
     filmsGrid.insertAdjacentHTML('beforeend', card)
@@ -115,4 +144,32 @@ function saveImage(slug, posterUrl) {
 
     const filename = `${slug}.jpg`
     downloadPoster(posterUrl, filename);
+}
+
+
+// Film Page
+async function showFilm() {
+
+    let filmInfo
+
+    while (!(filmInfo)) {
+        await sleep(200)
+        filmInfo = document.querySelector('.film-info')
+        console.log('waiting film-info')
+    }
+
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const slug = urlParams.get('slug')
+
+    while (!(filmsList)) {
+        // list = localStorage.getItem('filmsList');
+        await sleep(200)
+        console.log('waiting filmsList')
+    }
+
+    console.log(slug)
+    console.log(filmsList[slug])
+
+
 }
