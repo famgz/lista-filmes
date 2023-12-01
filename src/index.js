@@ -151,17 +151,15 @@ function saveImage(slug, posterUrl) {
 // Film Page
 
 // Mostrar Detalhes do Filme
-async function showFilm(slug = null, filmWrapper = null) {
+async function showFilm(slug = null, filmWrapper=null, filmCover=null, filmInfo=null) {
 
-    filmWrapper = filmWrapper ?? null
-    let filmCover
-    let filmInfo
+    console.log(filmWrapper)
 
     while (!(filmWrapper && filmCover && filmInfo)) {
         await sleep(200)
         filmWrapper = document.querySelector('.film-wrapper')
-        filmCover = document.querySelector('.film-cover')
-        filmInfo = document.querySelector('.film-info')
+        filmCover = filmWrapper.querySelector('.film-cover')
+        filmInfo = filmWrapper.querySelector('.film-info')
         console.log('waiting film-divs')
     }
 
@@ -247,7 +245,12 @@ async function showHighlights(n = 3) {
     for (const i in filmWrappers) {
         slug = Object.keys(filmsList)[i]
         filmWrapper = filmWrappers[i]
+
         console.log(slug, filmWrapper)
-        await showFilm(slug, filmWrapper)
+
+        let filmCover = filmWrapper.querySelector('.film-cover')
+        let filmInfo = filmWrapper.querySelector('.film-info')
+
+        await showFilm(slug, filmWrapper, filmCover, filmInfo)
     }
 }
