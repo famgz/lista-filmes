@@ -113,8 +113,9 @@ async function insertFilmCard(slug, filmData) {
         <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" class="card-poster-image"> 
         <div class="film-card-info">
             <h2>${filmData.internationalTitle}</h2>
+            <span class='film-rating'>${'★'.repeat(filmData.rating)}</span>
             <p>${filmData.director}</p>
-            <p>${filmData.countries  ? filmData.countries : 'Europa' }, ${filmData.year}</p>
+            <p>${filmData.countries ? filmData.countries : 'Europa'}, ${filmData.year}</p>
         </div>
     </a>
     `
@@ -148,23 +149,25 @@ function saveImage(slug, posterUrl) {
 
 
 // Film Page
-async function showFilm() {
 
-    let filmWrapper
+// Mostrar Detalhes do Filme
+async function showFilm(slug = null, filmWrapper = null) {
+
+    filmWrapper = filmWrapper ?? null
     let filmCover
     let filmInfo
 
     while (!(filmWrapper && filmCover && filmInfo)) {
         await sleep(200)
         filmWrapper = document.querySelector('.film-wrapper')
-        filmCover= document.querySelector('.film-cover')
-        filmInfo= document.querySelector('.film-info')
+        filmCover = document.querySelector('.film-cover')
+        filmInfo = document.querySelector('.film-info')
         console.log('waiting film-divs')
     }
 
     const queryString = window.location.search
     const urlParams = new URLSearchParams(queryString)
-    const slug = urlParams.get('slug')
+    slug = slug ?? urlParams.get('slug')
 
     while (!(filmsList)) {
         // list = localStorage.getItem('filmsList');
@@ -181,7 +184,7 @@ async function showFilm() {
     // console.log(posterUrlRetina)
 
     filmCover.insertAdjacentHTML(
-        'beforeend', 
+        'beforeend',
         `<img src="${posterUrlRetina}" alt="" class="poster-image-retina">`
     )
 
@@ -190,6 +193,7 @@ async function showFilm() {
             ${filmData.internationalTitle}
             <span> ${filmData.originalTitle ? '(' + filmData.originalTitle + ')' : ''}</span>
         </h1>
+        <h2 class="film-rating">${'★'.repeat(filmData.rating)}</h2>
         <h2>${filmData.director}, ${filmData.year}</h2>
         <h2>${filmData.countries}</h2>
         <h2>${filmData.duration} minutos</h2>
@@ -197,9 +201,53 @@ async function showFilm() {
     `
 
     filmInfo.insertAdjacentHTML('beforeend', filmInfoContent)
+}
 
 
+// Highlight Page
 
+// Mostrar os Destaques
+async function showHighlights(n = 3) {
 
+    let homeWrapper
 
+    // Wait for wrapper tag to be ready
+    while (!(homeWrapper)) {
+        await sleep(200)
+        homeWrapper = document.querySelector('.home-wrapper')
+        console.log('waiting home-wrapper')
+    }
+
+    // Wait for filmsList to be ready
+    while (!(filmsList)) {
+        // list = localStorage.getItem('filmsList');
+        await sleep(200)
+        console.log('waiting filmsList')
+    }
+
+    wrapper = `
+        <div class="film-wrapper">
+            <div class="container">
+                <div class="film-info">
+                </div>
+                <div class="film-cover">
+                </div>
+            </div>
+        </div>
+    `
+
+    // Build film wrappers
+    for (let i = 0; i < n; i++) {
+        homeWrapper.insertAdjacentHTML('beforeend', wrapper)
+    }
+
+    let filmWrappers = document.querySelectorAll('.film-wrapper')
+
+    // Fill film wrappers
+    for (const i in filmWrappers) {
+        slug = Object.keys(filmsList)[i]
+        filmWrapper = filmWrappers[i]
+        console.log(slug, filmWrapper)
+        await showFilm(slug, filmWrapper)
+    }
 }

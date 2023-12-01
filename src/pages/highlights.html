@@ -15,18 +15,10 @@
 <body>
     <div class="home-wrapper">
 
-        <div class="today-film main-text">
-            <h1>Todos os Filmes</h1>
-            <p>Aqui você encontra todos os filmes disponíveis na plataforma</p>
-            <p>Clique nos cards para mais informações</p>
+        <div class="highlight-films main-text">
+            <h1>Destaques da Semana</h1>
+            <!-- <p>Filmes que entraram no catálogo durante a semana</p> -->
         </div>
-
-        <div class="films-grid">
-            <!-- <div class="film-card">
-            </div> -->
-        </div>
-
-        <button class="load-more" onClick="buildFilmCards()">Carregar Mais</button>
 
     </div>
 
@@ -36,7 +28,7 @@
     </script>
     <script>
         getFilmsList()
-        buildFilmCards()
+        showHighlights(3)
     </script>
 </body>
 

@@ -1,4 +1,5 @@
 from famgz_utils import json_
+from random import randint
 
 
 def crop_list(max_items=1000):
@@ -55,6 +56,7 @@ def build_films_list_from_api():
             "director": data["director"],
             "posterUrl": data["posterUrl"],
             "synopsis": data["synopsis"],
+            "rating": randint(1,5),
         }
         for slug, data in raw_data.items()
     }
@@ -62,5 +64,5 @@ def build_films_list_from_api():
     json_(films_all_path, films)
 
 
-# build_films_list_from_api()
+build_films_list_from_api()
 crop_list()
