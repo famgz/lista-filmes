@@ -52,6 +52,7 @@
         &:hover {
             filter: brightness(1);
             box-shadow: 4px 4px 4px rgba(0,0,0,.15);
+            transform: scale(1.005);
         }
 
         & img.card-poster-image {
@@ -64,18 +65,21 @@
             padding: 1.5rem;
             gap: 1rem;
 
-            & h2 {
-                color: var(--black);
-                font-size: 2.2rem;
-                font-weight: 600;
+            & h2, & p {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+
+            & h2 {
+                color: var(--black);
+                font-size: 2.2rem;
+                font-weight: 600;
+            }
             
             & p {
                 color: var(--grey-8);
-                font-size: 1.3rem;
+                font-size: 1.4rem;
                 font-weight: 600;
             }
         }

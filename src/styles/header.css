@@ -3,7 +3,8 @@ header {
     color: var(--grey-1);
     padding: 5rem 5rem;
 
-    &, & > nav {
+    &,
+    &>nav {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -17,6 +18,38 @@ header {
 
     & nav {
         gap: 2rem;
+    }
 
+    & a {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1079px) {
+    header {
+        flex-direction: column;
+        gap: 3rem;
+
+        & nav {
+            gap: 3rem;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    header {
+        padding: 3rem 0;
+
+        & .logo {
+            height: 6rem;
+        }
+
+        & nav {
+            gap: 1rem;
+
+            & a {
+                font-size: 1.5rem;
+            }
+        }
     }
 }

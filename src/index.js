@@ -114,7 +114,7 @@ async function insertFilmCard(slug, filmData) {
         <div class="film-card-info">
             <h2>${filmData.internationalTitle}</h2>
             <p>${filmData.director}</p>
-            <p>${filmData.countries}, ${filmData.year}</p>
+            <p>${filmData.countries  ? filmData.countries : 'Europa' }, ${filmData.year}</p>
         </div>
     </a>
     `
