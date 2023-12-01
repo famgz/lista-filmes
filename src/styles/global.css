@@ -13,7 +13,7 @@
     --grey-8: #747474;
     --grey-9: #626262;
     --grey-10: #323232;
-    --black: black;
+    --black: rgb(8, 8, 8);
 }
 
 /* reset */

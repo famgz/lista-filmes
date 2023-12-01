@@ -106,11 +106,11 @@ async function insertFilmCard(slug, filmData) {
     // console.log(filmsGrid)
 
     posterUrl = filmData.posterUrl
-    saveImage(posterUrl)
+    // saveImage(posterUrl)
 
     card = `
     <a class="film-card" href="../pages/film.html?slug=${slug}">
-        <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" class="poster-image"> 
+        <img src="${posterUrl}" alt="${filmData.internationalTitle} poster image" class="card-poster-image"> 
         <div class="film-card-info">
             <h2>${filmData.internationalTitle}</h2>
             <p>${filmData.director}</p>
@@ -150,12 +150,16 @@ function saveImage(slug, posterUrl) {
 // Film Page
 async function showFilm() {
 
+    let filmWrapper
+    let filmCover
     let filmInfo
 
-    while (!(filmInfo)) {
+    while (!(filmWrapper && filmCover && filmInfo)) {
         await sleep(200)
-        filmInfo = document.querySelector('.film-info')
-        console.log('waiting film-info')
+        filmWrapper = document.querySelector('.film-wrapper')
+        filmCover= document.querySelector('.film-cover')
+        filmInfo= document.querySelector('.film-info')
+        console.log('waiting film-divs')
     }
 
     const queryString = window.location.search
@@ -169,7 +173,33 @@ async function showFilm() {
     }
 
     console.log(slug)
-    console.log(filmsList[slug])
+    filmData = filmsList[slug]
+    console.log(filmData)
+
+    posterUrlRetina = filmData.posterUrl.replace('/uploads/', '__retina/uploads/')
+
+    // console.log(posterUrlRetina)
+
+    filmCover.insertAdjacentHTML(
+        'beforeend', 
+        `<img src="${posterUrlRetina}" alt="" class="poster-image-retina">`
+    )
+
+    filmInfoContent = `
+        <h1>
+            ${filmData.internationalTitle}
+            <span> ${filmData.originalTitle ? '(' + filmData.originalTitle + ')' : ''}</span>
+        </h1>
+        <h2>${filmData.director}, ${filmData.year}</h2>
+        <h2>${filmData.countries}</h2>
+        <h2>${filmData.duration} minutos</h2>
+        <p>${filmData.synopsis}</p>
+    `
+
+    filmInfo.insertAdjacentHTML('beforeend', filmInfoContent)
+
+
+
 
 
 }
