@@ -3,6 +3,7 @@ let lastFilmIndex = 0
 let filmsList
 let filmsGrid = document.querySelector('.films-grid')
 
+
 const headers = new Headers({
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -11,6 +12,7 @@ const headers = new Headers({
     // 'Origin': url,
 });
 
+
 const requestOptions = {
     method: 'GET',
     headers: headers,
@@ -18,9 +20,11 @@ const requestOptions = {
     mode: "no-cors"
 };
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
 
 function getFilmsList() {
     fetch(filmsDataPath, requestOptions)
@@ -41,6 +45,7 @@ function getFilmsList() {
         })
 }
 
+
 async function buildFilmCards(maxEntries = 12) {
     while (!filmsList) {
         await sleep(200)
@@ -49,7 +54,6 @@ async function buildFilmCards(maxEntries = 12) {
 
     // console.log(filmsList)
 
-
     const slugs = Object.keys(filmsList);
 
     const tempLastFilmIndex = lastFilmIndex
@@ -57,29 +61,58 @@ async function buildFilmCards(maxEntries = 12) {
         const slug = slugs[i];
         const filmData = filmsList[slug];
 
-        console.log(i+1, slug, filmData.year);
-        await insertFilmCard(filmData)
+        console.log(i + 1, slug, filmData.year);
+        await insertFilmCard(slug, filmData)
 
         lastFilmIndex++
     }
     console.log('lastindex', lastFilmIndex)
 }
 
-async function insertFilmCard(filmData) {
+
+async function insertFilmCard(slug, filmData) {
 
     while (!filmsGrid) {
         await sleep(200)
         filmsGrid = document.querySelector('.films-grid')
-        console.log('waiting filmgrid')
+        // console.log('waiting filmgrid')
     }
 
     // console.log(filmsGrid)
 
+    posterUrl = filmData.posterUrl
+    saveImage(posterUrl)
+
     card = `
     <div class="film-card">
+        <img src="${posterUrl}" alt=""> 
         <p>${filmData.internationalTitle}</p>
     </div>
     `
 
     filmsGrid.insertAdjacentHTML('beforeend', card)
+}
+
+
+function saveImage(slug, posterUrl) {
+
+    const downloadPoster = (url, filename) => {
+        fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = filename;
+                a.click();
+            })
+            .catch(error => console.error('Error downloading poster:', error));
+    };
+
+    if (!posterUrl) {
+        console.log(`Empty posterUrl`)
+        return
+    }
+
+    const filename = `${slug}.jpg`
+    downloadPoster(posterUrl, filename);
 }

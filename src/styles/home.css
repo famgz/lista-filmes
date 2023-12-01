@@ -10,4 +10,12 @@ home {
     & .logo-img {
         height: 10rem;
     }
+
+    & button.load-more {
+        border: 1px solid var(--bw-3);
+        background-color: var(--bg-dark);
+        border-radius: 0;
+        padding: 1rem 2rem;
+        color: var(--bw-1);
+    }   
 }
