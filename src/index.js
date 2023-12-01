@@ -49,24 +49,23 @@ async function buildFilmCards(maxEntries = 12) {
 
     // console.log(filmsList)
 
-    let count = lastFilmIndex
-    maxEntries += count
-    for (const [slug, data] of Object.entries(filmsList)) {
-        count++
+
+    const slugs = Object.keys(filmsList);
+
+    const tempLastFilmIndex = lastFilmIndex
+    for (let i = tempLastFilmIndex; i < tempLastFilmIndex + maxEntries; i++) {
+        const slug = slugs[i];
+        const filmData = filmsList[slug];
+
+        console.log(i+1, slug, filmData.year);
+        await insertFilmCard(filmData)
+
         lastFilmIndex++
-        
-        console.log(count+1, slug, data.year);
-        await insertFilmCard(data)
-
-        if (count >= maxEntries) {
-            return
-        }
     }
-
     console.log('lastindex', lastFilmIndex)
 }
 
-async function insertFilmCard(data) {
+async function insertFilmCard(filmData) {
 
     while (!filmsGrid) {
         await sleep(200)
@@ -78,7 +77,7 @@ async function insertFilmCard(data) {
 
     card = `
     <div class="film-card">
-        <p>${data.internationalTitle}</p>
+        <p>${filmData.internationalTitle}</p>
     </div>
     `
 
