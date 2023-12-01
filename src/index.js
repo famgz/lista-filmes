@@ -189,12 +189,12 @@ async function showFilm(slug = null, filmWrapper=null, filmCover=null, filmInfo=
     filmInfoContent = `
         <h1>
             ${filmData.internationalTitle}
-            <span> ${filmData.originalTitle ? '(' + filmData.originalTitle + ')' : ''}</span>
-        </h1>
+            </h1>
+        <p class="original-title"> ${filmData.originalTitle ? '(' + filmData.originalTitle + ')' : ''}</p>
         <h2 class="film-rating">${'★'.repeat(filmData.rating)}</h2>
-        <h2>${filmData.director}, ${filmData.year}</h2>
+        <h2>${filmData.director}, ${filmData.year ?? '2020'}</h2>
         <h2>${filmData.countries}</h2>
-        <h2>${filmData.duration} minutos</h2>
+        <h2>${filmData.duration ?? '90'} minutos</h2>
         <p>${filmData.synopsis}</p>
     `
 
@@ -225,7 +225,7 @@ async function showHighlights(n = 3) {
 
     wrapper = `
         <div class="film-wrapper">
-            <div class="container">
+            <div class="container_">
                 <div class="film-info">
                 </div>
                 <div class="film-cover">

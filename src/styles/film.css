@@ -14,7 +14,7 @@
         align-items: center;
     }
 
-    & .container {
+    & .container_ {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -44,37 +44,41 @@
             color: var(--black);
             margin-bottom: 1rem;
 
-            & span {
-                font-size: 1.3rem;
-                font-weight: 800;
-                color: var(--grey-8);
-                margin-left: 1rem;
-            }
         }
 
-        & h2 {
-            margin-bottom: 1rem;
-            font-size: 2rem;
+        & .original-title {
+            font-size: 1.4rem;
             font-weight: 800;
-            color: var(--grey-10);
-        }
-
-        & .film-rating {
             color: var(--grey-8);
-            font-size: 3rem;
-            /* line-height: 0.9; */
+            display: block;
+            text-align: center;
+            margin: 0;
+            margin-bottom: .5rem;
         }
-
-        & p {
-            margin-top: 2rem;
-            font-size: 1.7rem;
-            font-weight: 500;
-            color: var(--grey-8);
-            line-height: 130%;
-            letter-spacing: 0.5px;
-        }
-
     }
+
+    & h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--grey-10);
+    }
+
+    & .film-rating {
+        color: var(--grey-8);
+        font-size: 3rem;
+        /* line-height: 0.9; */
+    }
+
+    & p {
+        margin-top: 2rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: var(--grey-8);
+        line-height: 130%;
+        letter-spacing: 0.5px;
+    }
+
 }
 
 @media (max-width: 1200px) {
@@ -85,10 +89,9 @@
         justify-content: center;
         gap: 0;
 
-        & .container {
+        & .container_ {
 
             flex-direction: column-reverse;
-
 
             & .film-cover {
                 width: 100%;
@@ -101,7 +104,6 @@
                 padding: 5rem;
                 justify-content: flex-start;
                 text-align: justify;
-
             }
         }
     }
@@ -110,7 +112,7 @@
 @media (max-width: 480px) {
     .film-wrapper {
 
-        & .container {
+        & .container_ {
 
             & .film-info {
                 padding: 2rem;

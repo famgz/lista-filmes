@@ -54,8 +54,8 @@ a {
         color: var(--grey-10);
         font-weight: 800;
     }
-    
-    & > h2 {
+
+    &>h2 {
         font-size: 3rem;
         color: var(--grey-7);
     }
@@ -67,9 +67,11 @@ a {
     }
 }
 
+/* Modal */
+
 div.modal-content {
     background-color: var(--grey-4);
-    
+
     & .modal-header {
         /* background-color: var(--grey-8); */
         color: var(--white);
@@ -105,5 +107,19 @@ div.modal-content {
             border: none;
             background: none;
 
+        }
+
+    }
+
+    .create-account-msg {
+        font-size: 1.4rem;
+        color: rgb(49, 49, 180);
+
+        & button {
+
+            &:hover {
+                filter: brightness(1.3);
+            }
+        }
     }
 }

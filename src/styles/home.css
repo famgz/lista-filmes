@@ -1,6 +1,7 @@
 .home-wrapper {
     flex: 1;
-    padding: 0 5rem 5rem 5rem;
+    padding: 0;
+    padding-bottom: 5rem;
     gap: 6rem;
     display: flex;
     align-items: center;
@@ -26,7 +27,6 @@
             color: #fff;
          }
     }   
-
 }
 
 
@@ -37,7 +37,7 @@
     grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
     column-gap: 3rem;
     row-gap: 4rem;
-    padding: 1rem;
+    padding: 0 3rem;
     width: 100%;
     max-width: 1300px;
 
@@ -76,12 +76,14 @@
                 color: var(--black);
                 font-size: 2.4rem;
                 font-weight: 600;
+                margin: 0;
             }
             
             & p {
                 color: var(--grey-8);
                 font-size: 1.4rem;
                 font-weight: 600;
+                margin: 0;
             }
 
             & .film-rating {
