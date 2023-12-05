@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Perfil</title>
+        <link rel="stylesheet" href="../index.css" />
+        <link
+            rel="shortcut icon"
+            href="../assets/favicon.ico"
+            type="image/x-icon"
+        />
+        <script src="../components.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="../index.css">
-    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
-    <script src="../components.js"></script>
-</head>
+    <body>
+        <div class="profile-wrapper">
+            <p>This is the PROFILE PAGE</p>
 
-<body>
-    <div class="profile-wrapper">
-        <p>This is the PROFILE PAGE</p>
-
-        <div class="profile-content">
-            <div class="films-grid">
-                <div class="film-card">
+            <div class="profile-content">
+                <div class="films-grid">
+                    <div class="film-card"></div>
+                    <div class="film-card"></div>
+                    <div class="film-card"></div>
+                    <div class="film-card"></div>
+                    <div class="film-card"></div>
+                    <div class="film-card"></div>
                 </div>
-                <div class="film-card">
+                <div class="right">
+                    <img src="../assets/logo-black.png" alt="" width="100" />
                 </div>
-                <div class="film-card">
-                </div>
-                <div class="film-card">
-                </div>
-                <div class="film-card">
-                </div>
-                <div class="film-card">
-                </div>
-            </div>
-            <div class="right">
-                <img src="../assets/logo-black.png" alt="" width="100">
             </div>
         </div>
 
-    </div>
-
-    <script src="../components.js"></script>
-    <script>
-        loadComponent('header', 'afterbegin');
-        loadComponent('footer', 'beforeend');
-    </script>
-</body>
-
+        <script src="../components.js"></script>
+        <script>
+            loadComponent('header', 'afterbegin');
+            loadComponent('footer', 'beforeend');
+        </script>
+    </body>
 </html>

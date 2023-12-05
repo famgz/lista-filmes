@@ -41,7 +41,6 @@ a {
     }
 }
 
-
 .main-text {
     display: flex;
     flex-direction: column;
@@ -55,7 +54,7 @@ a {
         font-weight: 800;
     }
 
-    &>h2 {
+    & > h2 {
         font-size: 3rem;
         color: var(--grey-7);
     }
@@ -96,7 +95,6 @@ div.modal-content {
     }
 
     & .modal-footer {
-
         background-color: var(--grey-9);
 
         & button {
@@ -106,9 +104,7 @@ div.modal-content {
             color: var(--white);
             border: none;
             background: none;
-
         }
-
     }
 
     .create-account-msg {
@@ -116,7 +112,6 @@ div.modal-content {
         color: rgb(49, 49, 180);
 
         & button {
-
             &:hover {
                 filter: brightness(1.3);
             }

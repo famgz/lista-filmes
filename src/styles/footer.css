@@ -4,13 +4,13 @@ footer {
     padding: 3rem;
     gap: 1.4rem;
     font-weight: normal;
-    
+
     & * {
         font-size: 1.3rem;
     }
 
     &,
-    &>div,
+    & > div,
     & .social-logos {
         display: flex;
         flex-direction: column;
@@ -42,7 +42,7 @@ footer {
 
     & .quick-links {
         flex-direction: row;
-        
+
         & a {
             display: inline;
             margin-left: 1rem;

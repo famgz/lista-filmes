@@ -4,7 +4,7 @@ header {
     padding: 4rem 4rem;
 
     &,
-    &>nav {
+    & > nav {
         display: flex;
         flex-direction: row;
         align-items: center;

@@ -21,14 +21,13 @@
         font-size: 1.7rem;
         font-weight: 600;
         cursor: pointer;
-        
+
         &:hover {
             background-color: var(--grey-8);
             color: #fff;
-         }
-    }   
+        }
+    }
 }
-
 
 .films-grid {
     display: grid;
@@ -44,15 +43,15 @@
     & .film-card {
         box-sizing: border-box;
         background-color: #fff;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         overflow: hidden;
         /* min-width: 20rem;
         min-height: 20rem; */
-        box-shadow: 2px 2px 3px rgba(0,0,0,.12);
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.12);
 
         &:hover {
             filter: brightness(1);
-            box-shadow: 4px 4px 4px rgba(0,0,0,.15);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
             transform: scale(1.005);
         }
 
@@ -66,7 +65,8 @@
             padding: 1.5rem;
             gap: 1rem;
 
-            & h2, & p {
+            & h2,
+            & p {
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -78,7 +78,7 @@
                 font-weight: 600;
                 margin: 0;
             }
-            
+
             & p {
                 color: var(--grey-8);
                 font-size: 1.4rem;
@@ -93,5 +93,4 @@
             }
         }
     }
-
 }
