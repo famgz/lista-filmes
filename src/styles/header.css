@@ -1,55 +1,55 @@
 header {
-    background-color: var(--grey-10);
-    color: var(--grey-1);
-    padding: 4rem 4rem;
+  background-color: var(--grey-10);
+  color: var(--grey-1);
+  padding: 4rem 4rem;
 
-    &,
-    & > nav {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+  &,
+  & > nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    & .logo {
-        height: 7rem;
-        /* width: 2rem; */
-    }
+  & .logo {
+    height: 7rem;
+    /* width: 2rem; */
+  }
 
-    & nav {
-        gap: 2rem;
-    }
+  & nav {
+    gap: 2rem;
+  }
 
-    & a {
-        font-size: 2.5rem;
-    }
+  & a {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 1079px) {
-    header {
-        flex-direction: column;
-        gap: 3rem;
+  header {
+    flex-direction: column;
+    gap: 3rem;
 
-        & nav {
-            gap: 3rem;
-        }
+    & nav {
+      gap: 3rem;
     }
+  }
 }
 
 @media (max-width: 680px) {
-    header {
-        padding: 3rem 0;
+  header {
+    padding: 3rem 0;
 
-        & .logo {
-            height: 6rem;
-        }
-
-        & nav {
-            gap: 1rem;
-
-            & a {
-                font-size: 1.5rem;
-            }
-        }
+    & .logo {
+      height: 6rem;
     }
+
+    & nav {
+      gap: 1rem;
+
+      & a {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }

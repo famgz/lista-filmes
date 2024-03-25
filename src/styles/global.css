@@ -1,120 +1,120 @@
 :root {
-    /* 1 rem = 10px */
-    font-size: 62.5%;
+  /* 1 rem = 10px */
+  font-size: 62.5%;
 
-    --white: white;
-    --grey-1: #f2f2f2;
-    --grey-2: #e0e0e0;
-    --grey-3: #cecece;
-    --grey-4: #bcbcbc;
-    --grey-5: #aaaaaa;
-    --grey-6: #989898;
-    --grey-7: #868686;
-    --grey-8: #747474;
-    --grey-9: #626262;
-    --grey-10: #323232;
-    --black: rgb(8, 8, 8);
+  --white: white;
+  --grey-1: #f2f2f2;
+  --grey-2: #e0e0e0;
+  --grey-3: #cecece;
+  --grey-4: #bcbcbc;
+  --grey-5: #aaaaaa;
+  --grey-6: #989898;
+  --grey-7: #868686;
+  --grey-8: #747474;
+  --grey-9: #626262;
+  --grey-10: #323232;
+  --black: rgb(8, 8, 8);
 }
 
 /* reset */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 500;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--grey-2);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--grey-2);
 
-    &:hover {
-        filter: brightness(1.3);
-    }
+  &:hover {
+    filter: brightness(1.3);
+  }
 }
 
 .main-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 5rem;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  gap: 2rem;
 
-    & h1 {
-        font-size: 5rem;
-        color: var(--grey-10);
-        font-weight: 800;
-    }
+  & h1 {
+    font-size: 5rem;
+    color: var(--grey-10);
+    font-weight: 800;
+  }
 
-    & > h2 {
-        font-size: 3rem;
-        color: var(--grey-7);
-    }
+  & > h2 {
+    font-size: 3rem;
+    color: var(--grey-7);
+  }
 
-    & p {
-        font-size: 2rem;
-        color: var(--grey-7);
-        font-weight: 500;
-    }
+  & p {
+    font-size: 2rem;
+    color: var(--grey-7);
+    font-weight: 500;
+  }
 }
 
 /* Modal */
 
 div.modal-content {
-    background-color: var(--grey-4);
+  background-color: var(--grey-4);
 
-    & .modal-header {
-        /* background-color: var(--grey-8); */
-        color: var(--white);
-        padding-left: 3rem;
-        padding-right: 3rem;
+  & .modal-header {
+    /* background-color: var(--grey-8); */
+    color: var(--white);
+    padding-left: 3rem;
+    padding-right: 3rem;
 
-        & h4 {
-            font-size: 2rem;
-        }
-
-        & button {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            border: none;
-            background: none;
-
-            & span {
-                font-size: 2rem;
-            }
-        }
+    & h4 {
+      font-size: 2rem;
     }
 
-    & .modal-footer {
-        background-color: var(--grey-9);
+    & button {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      border: none;
+      background: none;
 
-        & button {
-            width: 5rem;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            border: none;
-            background: none;
-        }
+      & span {
+        font-size: 2rem;
+      }
     }
+  }
 
-    .create-account-msg {
-        font-size: 1.4rem;
-        color: rgb(49, 49, 180);
+  & .modal-footer {
+    background-color: var(--grey-9);
 
-        & button {
-            &:hover {
-                filter: brightness(1.3);
-            }
-        }
+    & button {
+      width: 5rem;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--white);
+      border: none;
+      background: none;
     }
+  }
+
+  .create-account-msg {
+    font-size: 1.4rem;
+    color: rgb(49, 49, 180);
+
+    & button {
+      &:hover {
+        filter: brightness(1.3);
+      }
+    }
+  }
 }

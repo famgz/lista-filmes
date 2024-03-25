@@ -1,121 +1,121 @@
 .film-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* padding-top: 10rem; */
+  flex: 1;
+  gap: 5rem;
+  background-color: var(--grey-1);
+
+  & .film-info,
+  & .film-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .container_ {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    /* padding-top: 10rem; */
+    align-items: flex-start;
+    width: 100%;
+    height: fit-content;
+  }
+
+  & .film-cover {
+    width: 50%;
+  }
+
+  & .poster-image-retina {
+    width: 100%;
+    /* opacity: 0.5; */
+  }
+
+  & .film-info {
     flex: 1;
-    gap: 5rem;
-    background-color: var(--grey-1);
+    align-items: flex-start;
+    padding: 0 5rem;
+    justify-content: flex-start;
+    /* gap: 4rem; */
 
-    & .film-info,
-    & .film-cover {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    & h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 1rem;
     }
 
-    & .container_ {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        width: 100%;
-        height: fit-content;
+    & .original-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--grey-8);
+      display: block;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0.5rem;
     }
+  }
 
-    & .film-cover {
-        width: 50%;
-    }
+  & h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--grey-10);
+  }
 
-    & .poster-image-retina {
-        width: 100%;
-        /* opacity: 0.5; */
-    }
+  & .film-rating {
+    color: var(--grey-8);
+    font-size: 3rem;
+    /* line-height: 0.9; */
+  }
 
-    & .film-info {
-        flex: 1;
-        align-items: flex-start;
-        padding: 0 5rem;
-        justify-content: flex-start;
-        /* gap: 4rem; */
-
-        & h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--black);
-            margin-bottom: 1rem;
-        }
-
-        & .original-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--grey-8);
-            display: block;
-            text-align: center;
-            margin: 0;
-            margin-bottom: 0.5rem;
-        }
-    }
-
-    & h2 {
-        margin-bottom: 1rem;
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--grey-10);
-    }
-
-    & .film-rating {
-        color: var(--grey-8);
-        font-size: 3rem;
-        /* line-height: 0.9; */
-    }
-
-    & p {
-        margin-top: 2rem;
-        font-size: 1.6rem;
-        font-weight: 500;
-        color: var(--grey-8);
-        line-height: 130%;
-        letter-spacing: 0.5px;
-    }
+  & p {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--grey-8);
+    line-height: 130%;
+    letter-spacing: 0.5px;
+  }
 }
 
 @media (max-width: 1200px) {
-    .film-wrapper {
-        flex-direction: column-reverse;
+  .film-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+
+    & .container_ {
+      flex-direction: column-reverse;
+
+      & .film-cover {
+        width: 100%;
+      }
+
+      & .film-info {
+        flex: 1;
+        /* height: 100%; */
         align-items: center;
-        padding: 0;
-        justify-content: center;
-        gap: 0;
-
-        & .container_ {
-            flex-direction: column-reverse;
-
-            & .film-cover {
-                width: 100%;
-            }
-
-            & .film-info {
-                flex: 1;
-                /* height: 100%; */
-                align-items: center;
-                padding: 5rem;
-                justify-content: flex-start;
-                text-align: justify;
-            }
-        }
+        padding: 5rem;
+        justify-content: flex-start;
+        text-align: justify;
+      }
     }
+  }
 }
 
 @media (max-width: 480px) {
-    .film-wrapper {
-        & .container_ {
-            & .film-info {
-                padding: 2rem;
+  .film-wrapper {
+    & .container_ {
+      & .film-info {
+        padding: 2rem;
 
-                & h2 {
-                    font-size: 1.6rem;
-                }
-            }
+        & h2 {
+          font-size: 1.6rem;
         }
+      }
     }
+  }
 }
